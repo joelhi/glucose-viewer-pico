@@ -87,7 +87,7 @@ PIXEL_MAP = {
 def draw_numbers(lcd:LCD_1inch8, numbers, scale:int, x:int, y:int):
     
     for index, number in enumerate(numbers):
-        x_pos = index * scale * (_WIDTH + _SPACING)
+        x_pos = x + index * scale * (_WIDTH + _SPACING)
         y_pos = y
         scaled = get_scaled_pixels(str(number), scale)
         for i, val in enumerate(scaled):
