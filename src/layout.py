@@ -34,7 +34,7 @@ def colour_background(value :int):
     if(value==0):
         return(colour(150,10,25))
     elif(value==1):
-        return(colour(20,175,100))
+        return(colour(20,150,80))
     elif(value==2):
         return(colour(180,140,40))
     elif(value==3):
