@@ -1,6 +1,6 @@
 import time
 from driver.display_driver import LCD_1inch8, setup_lcd, colour
-from graphics.number_font import draw_numbers, map_index_to_2d
+from graphics.number_font import draw_numbers
 from graphics.trend_arrows import draw_trend_arrow
 from adapters.wifi_adapter import connect
 from adapters.libreview_adapter import fetch_glucose_data
@@ -53,5 +53,4 @@ while(True):
     lcd.text("Updated: "+glucose_info[1].split(" ")[1], 5, 5, lcd.WHITE)
     draw_trend_arrow(lcd, 5, 95, 3, glucose_info[2])
     lcd.show()
-    print(glucose_info)
     time.sleep(30)
