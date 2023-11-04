@@ -17,7 +17,7 @@ def connect_to_wifi(lcd : LCD_1inch8):
     lcd.show()
     time.sleep(1)
 
-def render_glucose_value(value: float):
+def render_glucose_value(lcd: LCD_1inch8, value: float):
     integer = [" ", " "]
     string = str(value)
     split = string.split(".")
@@ -34,23 +34,24 @@ def colour_background(value :int):
     if(value==0):
         return(colour(150,10,25))
     elif(value==1):
-        return(colour(20,150,80))
+        return(colour(10,120,50))
     elif(value==2):
-        return(colour(180,140,40))
+        return(colour(140,90,20))
     elif(value==3):
-        return(colour(200,100,20))
+        return(colour(140,45,10))
     else:
         return(colour(0,0,0))
 
-lcd = setup_lcd()
 
-connect_to_wifi(lcd)
+def run_layout():
+    lcd = setup_lcd()
+    connect_to_wifi(lcd)
 
-while(True):
-    glucose_info = fetch_glucose_data()
-    lcd.fill(colour_background(glucose_info[3]))
-    render_glucose_value(glucose_info[0])
-    lcd.text("Updated: "+glucose_info[1].split(" ")[1], 5, 5, lcd.WHITE)
-    draw_trend_arrow(lcd, 5, 95, 3, glucose_info[2])
-    lcd.show()
-    time.sleep(30)
+    while(True):
+        glucose_info = fetch_glucose_data()
+        lcd.fill(colour_background(glucose_info[3]))
+        render_glucose_value(lcd, glucose_info[0])
+        lcd.text("Updated: "+glucose_info[1].split(" ")[1], 5, 5, lcd.WHITE)
+        draw_trend_arrow(lcd, 5, 95, 3, glucose_info[2])
+        lcd.show()
+        time.sleep(30)
