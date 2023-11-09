@@ -1,17 +1,19 @@
 from driver.display_driver import LCD_1inch8, colour
-import math
 
-def get_scaled_pixels(original_pixels, width: int, height: int, scale:int):
-    scaled_width:int = width * scale
-    scaled_height:int = height * scale
+def get_scaled_pixels(original_pixels, width: int, height: int, scale: int):
+    scaled_width = width * scale
+    scaled_height = height * scale
     scaled = [0] * (scaled_height * scaled_width)
+    
     for idx, pixel in enumerate(original_pixels):
-        if(pixel == 0):
+        if pixel == 0:
             continue
-        (i, j) = map_index_to_2d(idx, width, 1)
-        scaled_pixels = get_scaled_indices(i, j, width, scale)
-        for scaled_pixel in scaled_pixels:
-            scaled[scaled_pixel] = pixel
+        
+        i, j = map_index_to_2d(idx, width, 1)
+        scaled_indices = get_scaled_indices(i, j, width, scale)
+        
+        for scaled_idx in scaled_indices:
+            scaled[scaled_idx] = pixel
 
     return scaled
 
@@ -44,7 +46,6 @@ class Colour:
     
     def __repr__(self) -> str:
         return str(self.r) + ", " + str(self.g) + ", " + str(self.b)
-
 
 def draw_gradient(lcd : LCD_1inch8, base:Colour, x_delta:Colour, y_delta:Colour):
     for w in range(lcd.width):

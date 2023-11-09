@@ -2,7 +2,6 @@ import network
 import urequests as requests
 from time import sleep
 from config import CONFIG
-import gc
 
 def connect():
     #Connect to WLAN
