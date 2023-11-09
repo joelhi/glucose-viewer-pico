@@ -46,29 +46,6 @@ class Colour:
         return str(self.r) + ", " + str(self.g) + ", " + str(self.b)
 
 
-def draw_circle(lcd : LCD_1inch8, x : float, y : float, r:float, c:int):
-    lcd.hline(x-r,y,r*2,c)
-    for i in range(1,r):
-        a = int(math.sqrt(r*r-i*i))
-        lcd.hline(x-a,y+i,a*2,c)
-        lcd.hline(x-a,y-i,a*2,c)
-
-def draw_ring(lcd : LCD_1inch8, x:float, y:float, r:float, c:int):
-    lcd.pixel(x-r,y,c)
-    lcd.pixel(x+r,y,c)
-    lcd.pixel(x,y-r,c)
-    lcd.pixel(x,y+r,c)
-    for i in range(1,r):
-        a = int(math.sqrt(r*r-i*i))
-        lcd.pixel(x-a,y-i,c)
-        lcd.pixel(x+a,y-i,c)
-        lcd.pixel(x-a,y+i,c)
-        lcd.pixel(x+a,y+i,c)
-        lcd.pixel(x-i,y-a,c)
-        lcd.pixel(x+i,y-a,c)
-        lcd.pixel(x-i,y+a,c)
-        lcd.pixel(x+i,y+a,c)
-
 def draw_gradient(lcd : LCD_1inch8, base:Colour, x_delta:Colour, y_delta:Colour):
     for w in range(lcd.width):
         f_w = w/lcd.width
