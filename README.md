@@ -2,6 +2,8 @@
 
 Project to view Freestyle Libre 2 glucose readings in realtime on a Raspberry Pico
 
+![Example application](media/example.png)
+
 ## Hardware
 The code is set up to run on the following hardware:
 
