@@ -13,7 +13,7 @@ The code is set up to run on the following hardware:
 ## LibreView API
 
 The project uses the LibreView API to fetch glucose readings. In order to fetch the data from the server, an account has to be set up to configure LibreLinkUp.
-Once the account is set up and the app is up and running, you can access the API using yout login credentials and a token.
+Once the account is set up and the app is up and running, you can access the API using your login credentials and a token.
 
 The credentials should be stored in a file called `cofig.py` as follows:
 
