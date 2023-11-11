@@ -5,7 +5,7 @@ _HEIGHT:int = 7
 _WIDTH:int = 5
 _SPACING = 1
 
-PIXEL_MAP = {
+NUMBER_BITMAPS = {
         "0" : [0,1,1,1,0,
                1,0,0,0,1,
                1,0,0,1,1,
@@ -96,7 +96,7 @@ def draw_numbers(lcd:LCD_1inch8, numbers, scale:int, x:int, y:int):
     for index, number in enumerate(numbers):
         x_pos = x + index * scale * (_WIDTH + _SPACING)
         y_pos = y
-        scaled = get_scaled_pixels(PIXEL_MAP[str(number)], _WIDTH, _HEIGHT, scale)
+        scaled = get_scaled_pixels(NUMBER_BITMAPS[str(number)], _WIDTH, _HEIGHT, scale)
         for i, val in enumerate(scaled):
             (j, i) = map_index_to_2d(i, _WIDTH, scale)
             if(val == 1):
