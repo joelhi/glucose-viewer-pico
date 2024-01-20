@@ -12,4 +12,3 @@ def connect():
         print('Waiting for connection...')
         sleep(1)
     print(wlan.ifconfig())
-    
