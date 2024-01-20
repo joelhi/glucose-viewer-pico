@@ -39,5 +39,5 @@ More info about using the API and generating a token can be found at this unoffi
 This code is distributed under the MIT License.
 
 ## Todo
-- [ ] Better error and crash handling
+- [x] Better error and crash handling
 - [ ] Option to fetch and display graph data
