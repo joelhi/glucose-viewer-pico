@@ -40,8 +40,8 @@ def render_glucose_value(lcd: LCD_1inch8, value: float):
     decimal_digit = str(int(decimal_part * 10))
 
     integer = [
-        integer_digits[1] if len(integer_digits) > 1 else " ",
-        integer_digits[0] if len(integer_digits) > 0 else " ",
+        integer_digits[0] if len(integer_digits) > 1 else " ",
+        integer_digits[1] if len(integer_digits) > 1 else integer_digits[0],
     ]
 
     draw_numbers(lcd, integer, SCALE, 15, 30)
