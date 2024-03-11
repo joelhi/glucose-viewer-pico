@@ -4,7 +4,7 @@ Micropython project to view Freestyle Libre 2 glucose readings in real-time on a
 
 ![Example application](media/example.png)
 
-This is a small project hobby project which will display glucose readings in "real-time" (readings are updated every minute or so) on a Raspberry Pi Pico W. The layout shows the glucose value, the time stamp of the reading, and the trend arrow, and can be placed on your desk to aid in keeping an eye on your glucose levels. The display will change colour according to the same patterns used in the LibreView app.
+This is a small hobby project which will display glucose readings in "real-time" (readings are updated every minute or so) on a Raspberry Pi Pico W using the LibreView API. The layout shows the glucose value, the time stamp of the reading, and the trend arrow, and can be placed on your desk to aid in keeping an eye on your glucose levels. The display will change colour according to the same patterns used in the LibreView app.
 
 The project includes the drivers for the display used, which is linked below, but could be configured to work with some other display. To adapt to another display, the number font is custom and scalable and the utils to draw them along with the trend arrows is found in the graphics folder.
 
